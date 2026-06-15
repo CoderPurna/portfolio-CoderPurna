@@ -1798,6 +1798,8 @@ body[data-theme="dark"] .stat-number {
     padding: 1rem;
     box-shadow: 3px 3px 0 var(--border);
     height: 400px;
+    transform: none !important;
+    overflow-y: auto !important;
   }
 
   .timeline-header {
@@ -4141,10 +4143,12 @@ body[data-theme="dark"] .github-stat-num {
   padding: 1rem 0;
   width: 100%;
   max-width: 100%;
+  min-width: 0;
 }
 
 .github-calendar-wrapper {
-  width: 100%;
+  width: max-content;
+  min-width: 100%;
   max-width: 850px;
   display: flex;
   justify-content: center;
@@ -4168,9 +4172,13 @@ body[data-theme="dark"] .github-stat-num {
 /* Responsive styles */
 @media (max-width: 992px) {
   .github-calendar-dashboard {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     padding: 1.5rem;
     gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .github-stats-panel {
@@ -4178,5 +4186,21 @@ body[data-theme="dark"] .github-stat-num {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+
+  .github-username {
+    font-size: 1.1rem;
+  }
+
+  .github-calendar-wrapper {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .github-calendar-section {
+    padding: 2rem 0;
   }
 }

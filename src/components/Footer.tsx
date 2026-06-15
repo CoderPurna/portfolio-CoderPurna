@@ -71,7 +71,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
             >
               <i className="fab fa-twitter"></i>
             </a>
-            <a href="mailto:deypurnabrata@gmail.com" title="Email">
+            <a href="mailto:coderpurna@gmail.com" title="Email">
               <i className="fas fa-envelope"></i>
             </a>
           </div>

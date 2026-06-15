@@ -20,7 +20,6 @@ interface TerminalState {
     type: 'command' | 'error' | 'info' | 'success' | 'welcome' | 'raw'
   }>
   isGameActive: boolean
-  isMatrixActive: boolean
 }
 
 export default function TerminalPage() {
@@ -33,7 +32,6 @@ export default function TerminalPage() {
       historyIndex: -1,
       output: [],
       isGameActive: false,
-      isMatrixActive: false,
     },
   })
   const [activeTerminalId, setActiveTerminalId] = useState('term-main')
@@ -44,7 +42,6 @@ export default function TerminalPage() {
   // Modal States
   const [themeModalOpen, setThemeModalOpen] = useState(false)
   const [projectsModalOpen, setProjectsModalOpen] = useState(false)
-  const [skillsModalOpen, setSkillsModalOpen] = useState(false)
 
   // Drag resizing state
   const [resizing, setResizing] = useState<{
@@ -60,49 +57,52 @@ export default function TerminalPage() {
   // Projects data
   const projects = [
     {
+      title: 'CoderArena',
+      description: 'A comprehensive coding practice, competitive programming, and technical interview preparation platform featuring interactive coding challenges, structured editorial solutions, and progress analytics.',
+      image: '/image/coderarena-cover.png',
+      technologies: ['Vite-React', 'Tailwind CSS', 'Node.js', 'TypeScript', 'Express.js', 'Prisma', 'PostgreSQL', 'Docker'],
+      demo: 'https://coderarena.tech/',
+      repo: 'https://github.com/Purnabrata2005/CodeArena',
+    },
+    {
       title: 'Interactive Terminal Resume',
-      description: 'A unique terminal-based resume with interactive features, pane splitting, custom themes, and easter eggs.',
+      description: 'A unique terminal-based resume with interactive features, pane splitting, custom themes, retro snake game, matrix digital rain, and easter eggs.',
       image: '/image/social-cover.png',
-      technologies: ['React', 'TypeScript', 'p5.js', 'Next.js', 'Vanilla CSS'],
-      demo: 'https://marjoballabani.me/terminal',
-      repo: 'https://github.com/marjoballabani/marjoballabani.github.io',
-    },
-    {
-      title: 'coderarena',
-      description: 'A terminal-based user interface for managing Firebase Firestore and Cloud Functions directly from the command line.',
-      image: '/image/coderarena-logo.svg',
-      technologies: ['Go', 'TUI', 'Firebase', 'Firestore'],
-      demo: 'https://marjoballabani.github.io/coderarena/',
-      repo: 'https://github.com/marjoballabani/coderarena',
-    },
-    {
-      title: 'Hypergrep',
-      description: 'A high-performance codebase search and intelligence engine designed specifically to help AI agents navigate code repositories.',
-      image: '/image/avatar-gpt.png',
-      technologies: ['Rust', 'AST Parsing', 'ripgrep', 'LSP'],
-      demo: 'https://marjoballabani.github.io/hypergrep/',
-      repo: 'https://github.com/marjoballabani/hypergrep',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+      demo: '/terminal',
+      repo: 'https://github.com/Purnabrata2005/coderpurna',
     },
   ]
 
   // Skills data
   const skills = {
-    programming: {
-      TypeScript: 95,
+    languages: {
+      JavaScript: 95,
+      TypeScript: 92,
+      Java: 80,
+      HTML: 95,
+      CSS: 90,
+    },
+    frontend: {
       'Next.js': 95,
       'React.js': 95,
-      'Node.js': 92,
-      JavaScript: 98,
       'Tailwind CSS': 95,
+      'React Native': 85,
+      Redux: 88,
     },
-    cloud: {
-      AWS: 85,
-      Azure: 80,
+    backend: {
+      'Node.js': 92,
+      'Express.js': 90,
+      Firebase: 90,
     },
     databases: {
       MongoDB: 92,
       PostgreSQL: 88,
       Redis: 85,
+    },
+    cloud_devops: {
+      AWS: 80,
+      Docker: 85,
     },
   }
 
@@ -272,37 +272,17 @@ export default function TerminalPage() {
         setProjectsModalOpen(true)
         printOutput(id, 'Opening Projects modal...', 'info')
         break
-      case 'skills-visual':
-        setSkillsModalOpen(true)
-        printOutput(id, 'Opening Skills Visualization modal...', 'info')
-        break
       case 'game':
         startGame(id)
         break
       case 'exit-game':
         endGame(id)
         break
-      case 'matrix':
-        startMatrix(id)
-        break
-      case 'stop-matrix':
-        stopMatrix(id)
-        break
-      case 'weather':
-        await showWeather(id, args.join(' '))
-        break
-      case 'calc':
-      case 'calculate':
-        calculate(id, args.join(' '))
-        break
       case 'pdf':
         printOutput(id, 'Generating PDF resume...', 'info')
         setTimeout(() => {
           printOutput(id, 'Direct PDF downloads are temporarily disabled in the sandboxed preview. Visit the LinkedIn profile to download my complete CV.', 'error')
         }, 800)
-        break
-      case 'linkedin-cover':
-        showLinkedInCover(id)
         break
       default:
         printOutput(id, `Command not found: ${command}. Type 'help' for available commands.`, 'error')
@@ -358,27 +338,12 @@ export default function TerminalPage() {
       wrapColor('• projects', '#98fb98') +
       '   ' +
       wrapColor('View my project showcase\n', '#ffffff') +
-      wrapColor('• skills-visual', '#98fb98') +
-      ' ' +
-      wrapColor('Show skills visualization\n', '#ffffff') +
       wrapColor('• game', '#98fb98') +
       '      ' +
       wrapColor('Play mini-game Snake (Use Arrow keys, Space, ESC)\n', '#ffffff') +
-      wrapColor('• matrix', '#98fb98') +
-      '    ' +
-      wrapColor('Start Matrix digital rain effect\n', '#ffffff') +
-      wrapColor('• weather', '#98fb98') +
-      '   ' +
-      wrapColor('Check weather: weather [city name]\n', '#ffffff') +
-      wrapColor('• calc', '#98fb98') +
-      '      ' +
-      wrapColor('Evaluate math: calc [expression]\n', '#ffffff') +
       wrapColor('• pdf', '#98fb98') +
       '       ' +
-      wrapColor('Download resume as PDF\n', '#ffffff') +
-      wrapColor('• linkedin-cover', '#98fb98') +
-      ' ' +
-      wrapColor('Generate LinkedIn cover banner\n', '#ffffff')
+      wrapColor('Download resume as PDF\n', '#ffffff')
 
     const shortcuts =
       '\n' +
@@ -412,15 +377,18 @@ export default function TerminalPage() {
       wrapColor('✨ About Me\n\n', '#ff8c00') +
       wrapColor('┌─────────────────────────────────────────────────────────┐\n', '#ff8c00') +
       wrapColor('│', '#ff8c00') +
-      wrapColor(' Full-Stack Engineer with more than 4 years of            ', '#ffffff') +
+      wrapColor(' Hello, World! I am Purnabrata Dey.                       ', '#ffffff') +
       wrapColor('│\n', '#ff8c00') +
       wrapColor('│', '#ff8c00') +
-      wrapColor(' programming experience.                                  ', '#ffffff') +
+      wrapColor(' Full-Stack Engineer with 4+ years of experience.         ', '#ffffff') +
+      wrapColor('│\n', '#ff8c00') +
+      wrapColor('│', '#ff8c00') +
+      wrapColor(' Passionate about clean code and creative UI designs.     ', '#ffffff') +
       wrapColor('│\n', '#ff8c00') +
       wrapColor('└─────────────────────────────────────────────────────────┘\n\n', '#ff8c00') +
       wrapColor('⚡ Experience\n', '#ff8c00') +
       wrapColor('   Building scalable and efficient software solutions using\n', '#ffffff') +
-      wrapColor('   React, JavaScript, and Google Cloud\n\n', '#ff8c00') +
+      wrapColor('   Next.js, React, Node.js, and TypeScript\n\n', '#ff8c00') +
       wrapColor('⚡ Passion\n', '#ff8c00') +
       wrapColor('   Transforming innovative ideas into high-quality applications\n', '#ffffff') +
       wrapColor('   with elegant and efficient implementations\n\n', '#ffffff') +
@@ -429,7 +397,7 @@ export default function TerminalPage() {
       wrapColor('   high-performance systems\n\n', '#ffffff') +
       wrapColor('╭───────────────────────────────────────────────────────╮\n', '#ff8c00') +
       wrapColor('│', '#ff8c00') +
-      wrapColor(' Ready to bring your innovative ideas to life!          ', '#ffffff') +
+      wrapColor(' Ready to bring your innovative ideas to life!         ', '#ffffff') +
       wrapColor('│\n', '#ff8c00') +
       wrapColor('╰───────────────────────────────────────────────────────╯', '#ff8c00')
 
@@ -441,25 +409,22 @@ export default function TerminalPage() {
       wrapColor('🛠️ Technical Expertise\n\n', '#ffff00') +
       '• ' +
       wrapColor('Languages: ', '#00ffff') +
-      'JavaScript, TypeScript, Kotlin, Java, SQL, HTML, CSS\n' +
+      'JavaScript, TypeScript, Java, HTML, CSS\n' +
       '• ' +
       wrapColor('Frontend: ', '#00ffff') +
-      'Next.js, Tailwind CSS, React.js, Redux, MobX, Angular, Bootstrap, Material-UI, React Native, Ionic\n' +
+      'Next.js, React.js, Tailwind CSS, React Native, Redux, Material-UI, Motion, React Router, Vite, shadcn/ui, Zustand, React Query\n' +
       '• ' +
       wrapColor('Backend: ', '#00ffff') +
-      'Node.js, Express.js, Hapi, Cloud Functions, AWS Lambda, Nginx\n' +
+      'Node.js, Express.js, Drizzle ORM, Prisma, Firebase, AWS S3\n' +
       '• ' +
       wrapColor('Cloud & DevOps: ', '#00ffff') +
-      'AWS, Azure, Docker, Kubernetes, Terraform\n' +
+      'AWS, Docker, Cloudinary\n' +
       '• ' +
       wrapColor('Databases: ', '#00ffff') +
-      'MongoDB, Firestore, Firebase Realtime Database, RethinkDB, PostgreSQL, BigQuery, Redis\n' +
+      'MongoDB, Redis, PostgreSQL\n' +
       '• ' +
-      wrapColor('Architecture: ', '#00ffff') +
-      'Microservices, SaaS, Pub/Sub Messaging, Routing Slips, Dead Letter Queues\n' +
-      '• ' +
-      wrapColor('Tools & Methods: ', '#00ffff') +
-      'Git, Elasticsearch, GraphQL, Pandas, Jest, Cypress, JIRA, Agile/Scrum, CI/CD, TDD'
+      wrapColor('Tools & More: ', '#00ffff') +
+      'Git, VSCode, Postman, Requestly, pnpm, Bun'
 
     printOutput(id, '', 'raw', skillsText)
   }
@@ -468,11 +433,16 @@ export default function TerminalPage() {
     const expText =
       wrapColor('💼 Professional Experience\n\n', '#ffff00') +
       wrapColor('CODERARENA | Full-Stack Engineer & Creator\n', '#00ffff') +
-      wrapColor('2020 - Present | Digha, West Bengal, India\n', '#ffffff') +
+      wrapColor('2026 - Present | Digha, West Bengal, India\n', '#ffffff') +
       '• Built and launched CoderArena, a complete coding practice platform featuring interactive coding challenges,\n' +
       '  interview preparation paths, structured editorial solutions, and progress analytics.\n' +
       '• Engineered high-performance compilers/interpreters and scalable web infrastructure.\n' +
-      wrapColor('Stack: Next.js, Tailwind CSS, React, Node.js, TypeScript, JavaScript, Docker', '#87cefa')
+      wrapColor('Stack: Next.js, Tailwind CSS, React, Node.js, TypeScript, JavaScript, Docker\n\n', '#87cefa') +
+      wrapColor('SRABU CONSULTANCY SERVICES | Associate Software Engineer Intern\n', '#00ffff') +
+      wrapColor('Oct 2025 - Dec 2025 | Kolkata, West Bengal, India (Hybrid)\n', '#ffffff') +
+      '• Selected for the Software Development & Engineering Team, contributing to digital future and solutions.\n' +
+      '• Worked on IT consulting and digital marketing software under manager Saikat Chattaraj.\n' +
+      '• <a href="https://drive.google.com/file/d/13xNcTGZ1cUgJK-XcH_DYiojGuXETK-EL/view?usp=sharing" target="_blank" style="color:#ffffff;text-decoration:underline;">View Confirmation Letter</a>'
 
     printOutput(id, '', 'raw', expText)
   }
@@ -480,8 +450,8 @@ export default function TerminalPage() {
   const showEducation = (id: string) => {
     const eduText =
       wrapColor('🎓 Education\n\n', '#ff8c00') +
-      wrapColor('Bachelor\'s Degree in Computer Science\n', '#ffffff') +
-      'University of Tirana • Tirana, Albania (2013 - 2016)'
+      wrapColor('Bachelor\'s Degree in Computer Science & Engineering\n', '#ffffff') +
+      'Ramkrishna Mahato Government Engineering College • Purulia, West Bengal, India (2023 - 2027 Pursuing)'
 
     printOutput(id, '', 'raw', eduText)
   }
@@ -491,7 +461,7 @@ export default function TerminalPage() {
       wrapColor('📫 Contact Information\n\n', '#ff8c00') +
       '• ' +
       wrapColor('Email: ', '#ff8c00') +
-      '<a href="mailto:deypurnabrata@gmail.com" style="color:#ffffff;text-decoration:underline;">deypurnabrata@gmail.com</a>\n' +
+      '<a href="mailto:coderpurna@gmail.com" style="color:#ffffff;text-decoration:underline;">coderpurna@gmail.com</a>\n' +
       '• ' +
       wrapColor('LinkedIn: ', '#ff8c00') +
       '<a href="https://linkedin.com/in/purnabrata-dey-15018a369" target="_blank" style="color:#ffffff;text-decoration:underline;">linkedin.com/in/purnabrata-dey-15018a369</a>\n' +
@@ -503,99 +473,6 @@ export default function TerminalPage() {
       '<a href="https://x.com/purnabrata2005" target="_blank" style="color:#ffffff;text-decoration:underline;">@purnabrata2005</a>'
 
     printOutput(id, '', 'raw', contactText)
-  }
-
-  // Weather Command Implementation
-  const showWeather = async (id: string, location: string) => {
-    if (!location) {
-      printOutput(id, 'Please specify a city. Usage: weather [city name]', 'error')
-      return
-    }
-
-    printOutput(id, `Fetching weather for ${location}...`, 'info')
-
-    try {
-      const apiKey = '4331a27995f4c5b5e8d1eab1ed3d88b4'
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(location)}&appid=${apiKey}&units=metric`
-      const res = await fetch(url)
-
-      if (!res.ok) {
-        throw new Error(`Location not found: ${res.statusText}`)
-      }
-
-      const data = await res.json()
-
-      const html = `<div class="weather-container">
-        <div class="weather-header">
-          <span style="color:#ffff00;font-weight:bold;">🌤️ Weather for ${data.name}, ${data.sys.country}</span>
-        </div>
-        <div class="weather-body">
-          <div class="weather-main" style="display:flex;flex-direction:column;margin-bottom:10px;">
-            <span style="font-size:2rem;color:#ffffff;font-weight:bold;">${Math.round(data.main.temp)}°C</span>
-            <span style="color:#cccccc;">${data.weather[0].main} - ${data.weather[0].description}</span>
-          </div>
-          <div class="weather-details" style="font-size:0.95rem;">
-            <div><span style="color:#87cefa;">Feels like:</span> ${Math.round(data.main.feels_like)}°C</div>
-            <div><span style="color:#87cefa;">Humidity:</span> ${data.main.humidity}%</div>
-            <div><span style="color:#87cefa;">Wind:</span> ${Math.round(data.wind.speed * 3.6)} km/h</div>
-          </div>
-        </div>
-      </div>`
-
-      printOutput(id, '', 'raw', html)
-    } catch (e: any) {
-      printOutput(id, `Weather fetch failed: ${e.message}`, 'error')
-    }
-  }
-
-  // Calculator Command Implementation
-  const calculate = (id: string, expression: string) => {
-    if (!expression) {
-      printOutput(id, 'Please enter a math expression. Usage: calc [expression]', 'error')
-      return
-    }
-
-    try {
-      // Sanitize expression
-      const sanitized = expression.replace(/[^0-9+\-*/().%\s]/g, '')
-      const result = eval(sanitized)
-
-      if (isNaN(result) || !isFinite(result)) {
-        throw new Error('Arithmetic error')
-      }
-
-      const html = `<div class="calculation" style="font-family:'Fira Code', monospace;margin: 5px 0;">
-        <div class="calculation-expression" style="color:#87cefa;">${expression}</div>
-        <div class="calculation-result" style="color:#98fb98;font-weight:bold;">= ${result}</div>
-      </div>`
-
-      printOutput(id, '', 'raw', html)
-    } catch (err) {
-      printOutput(id, 'Invalid calculation expression.', 'error')
-    }
-  }
-
-  // LinkedIn cover mockup helper
-  const showLinkedInCover = (id: string) => {
-    const html = `<div style="width:100%;background-color:#1e1e2e;border:1px solid #555555;border-radius:8px;padding:20px;box-sizing:border-box;margin-top:10px;">
-      <div style="display:flex;gap:5px;margin-bottom:15px;">
-        <span style="width:10px;height:10px;border-radius:50%;background-color:#ff5f56;"></span>
-        <span style="width:10px;height:10px;border-radius:50%;background-color:#ffbd2e;"></span>
-        <span style="width:10px;height:10px;border-radius:50%;background-color:#27c93f;"></span>
-      </div>
-      <pre style="color:#d4843e;font-size:9px;line-height:1.1;margin:0;font-family:'Fira Code', monospace;">
-██████╗ ██╗   ██╗██████╗ ███╗   ██╗ █████╗ 
-██╔══██╗██║   ██║██╔══██╗████╗  ██║██╔══██╗
-██████╔╝██║   ██║██████╔╝██╔██╗ ██║███████║
-██╔═══╝ ██║   ██║██╔══██╗██║╚██╗██║██╔══██║
-██║     ╚██████╔╝██║  ██║██║ ╚████║██║  ██║
-╚═╝      ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝
-      </pre>
-      <div style="width:100%;height:1px;background-color:#333;margin:10px 0;"></div>
-      <div style="font-size:13px;color:#ffffff;text-align:center;font-weight:bold;">Purnabrata Dey</div>
-      <div style="font-size:10px;color:#888888;text-align:center;">Full-Stack Engineer • Next.js & React Developer</div>
-    </div>`
-    printOutput(id, '', 'raw', html)
   }
 
   // Tab Completion autocomplete
@@ -610,15 +487,9 @@ export default function TerminalPage() {
       'contact',
       'clear',
       'projects',
-      'skills-visual',
       'game',
       'exit-game',
-      'matrix',
-      'stop-matrix',
-      'weather',
-      'calc',
       'pdf',
-      'linkedin-cover',
     ]
 
     const matches = commands.filter((cmd) => cmd.startsWith(currentInput))
@@ -644,7 +515,6 @@ export default function TerminalPage() {
         historyIndex: -1,
         output: [],
         isGameActive: false,
-        isMatrixActive: false,
       },
     }))
 
@@ -771,7 +641,7 @@ export default function TerminalPage() {
     setActiveGameId(id)
     setTerminals((prev) => ({
       ...prev,
-      [id]: { ...prev[id], isGameActive: true, isMatrixActive: false },
+      [id]: { ...prev[id], isGameActive: true },
     }))
 
     gameStateRef.current = {
@@ -969,83 +839,7 @@ export default function TerminalPage() {
     }
   }, [activeGameId])
 
-  // Matrix Digital Rain effect
-  const [activeMatrixId, setActiveMatrixId] = useState<string | null>(null)
-  const matrixCanvasRef = useRef<HTMLCanvasElement | null>(null)
 
-  const startMatrix = (id: string) => {
-    if (activeMatrixId) stopMatrix(activeMatrixId)
-
-    setActiveMatrixId(id)
-    setTerminals((prev) => ({
-      ...prev,
-      [id]: { ...prev[id], isMatrixActive: true, isGameActive: false },
-    }))
-  }
-
-  const stopMatrix = (id: string) => {
-    setActiveMatrixId(null)
-    setTerminals((prev) => {
-      const term = prev[id]
-      if (!term) return prev
-      return {
-        ...prev,
-        [id]: { ...term, isMatrixActive: false },
-      }
-    })
-  }
-
-  // Matrix Canvas Render loop
-  useEffect(() => {
-    if (!activeMatrixId) return
-
-    const canvas = matrixCanvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
-    canvas.width = canvas.parentElement?.offsetWidth || 500
-    canvas.height = 300
-
-    const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%#&_()[]{}<>'
-    const fontSize = 14
-    const cols = Math.floor(canvas.width / fontSize)
-    const drops = Array(cols).fill(0).map(() => Math.floor(Math.random() * -30))
-
-    const getGreenThemeColor = () => {
-      switch (terminalTheme) {
-        case 'dracula':
-          return '#50fa7b'
-        case 'solarized':
-          return '#859900'
-        case 'nord':
-          return '#a3be8c'
-        default:
-          return '#00ff00'
-      }
-    }
-
-    const draw = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
-
-      ctx.fillStyle = getGreenThemeColor()
-      ctx.font = `${fontSize}px monospace`
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = chars[Math.floor(Math.random() * chars.length)]
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize)
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0
-        }
-        drops[i]++
-      }
-    }
-
-    const interval = setInterval(draw, 50)
-    return () => clearInterval(interval)
-  }, [activeMatrixId, terminalTheme])
 
   // Recursive pane renderer JSX
   const renderPane = (node: PaneNode): React.ReactNode => {
@@ -1074,15 +868,7 @@ export default function TerminalPage() {
                 )
               })}
 
-              {/* Matrix rain Canvas mounting */}
-              {state.isMatrixActive && activeMatrixId === node.id && (
-                <div id="matrix-container" className="matrix-container" style={{ position: 'relative', height: '300px', margin: '15px 0' }}>
-                  <canvas ref={matrixCanvasRef} style={{ width: '100%', height: '300px', background: '#000' }} />
-                  <div className="matrix-instructions" style={{ position: 'absolute', bottom: '10px', right: '15px', color: '#ff8c00', fontSize: '10px' }}>
-                    Type 'stop-matrix' to exit
-                  </div>
-                </div>
-              )}
+
 
               {/* Snake Game canvas mounting */}
               {state.isGameActive && activeGameId === node.id && (
@@ -1263,36 +1049,6 @@ export default function TerminalPage() {
                         <i className="fab fa-github"></i> Repository
                       </a>
                     </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Skills Progress Visual Modal */}
-      {skillsModalOpen && (
-        <div className="modal active">
-          <div className="modal-content skills-modal-content">
-            <span className="close-button" onClick={() => setSkillsModalOpen(false)}>&times;</span>
-            <h2>Skills Visualization</h2>
-            <div className="skills-container">
-              {Object.entries(skills).map(([category, items]) => (
-                <div key={category} className="skill-category" style={{ marginBottom: '20px' }}>
-                  <h3 className="skill-category-title" style={{ textTransform: 'capitalize', color: 'var(--text-bright)' }}>{category}</h3>
-                  <div className="skill-bars" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-                    {Object.entries(items).map(([name, level]) => (
-                      <div key={name} className="skill-item">
-                        <div className="skill-info" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '5px' }}>
-                          <span className="skill-name">{name}</span>
-                          <span className="skill-level" style={{ opacity: 0.8 }}>{level}%</span>
-                        </div>
-                        <div className="skill-progress" style={{ height: '8px', background: 'rgba(255,255,255,0.1)', borderRadius: '4px' }}>
-                          <div className="skill-progress-bar" style={{ height: '100%', background: 'var(--text-bright)', borderRadius: '4px', width: `${level}%` }}></div>
-                        </div>
-                      </div>
-                    ))}
                   </div>
                 </div>
               ))}

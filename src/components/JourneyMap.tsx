@@ -64,6 +64,13 @@ export default function JourneyMap() {
             period: '2026 - Present',
             role: 'Full-Stack Engineer',
           },
+          {
+            city: 'Kolkata, West Bengal (Hybrid)',
+            company: 'Srabu Consultancy Services',
+            period: 'Oct 2025 - Dec 2025',
+            role: 'Associate Software Engineer Intern',
+            link: 'https://drive.google.com/file/d/13xNcTGZ1cUgJK-XcH_DYiojGuXETK-EL/view?usp=sharing',
+          },
         ],
       },
     ]
@@ -94,6 +101,7 @@ export default function JourneyMap() {
             <span>${company.role}</span>
             <small>${company.city}</small>
             <small>${company.period}</small>
+            ${company.link ? `<a href="${company.link}" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:8px;color:#004eeb;text-decoration:underline;font-size:0.85rem;font-weight:600;"><i class="fas fa-external-link-alt"></i> View Letter</a>` : ''}
           </div>
         `
       })

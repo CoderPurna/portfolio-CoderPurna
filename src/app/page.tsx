@@ -306,6 +306,11 @@ export default function Home() {
           setTimelineBackZIndex(100)
           setTimelineOverflow('hidden')
         }
+      } else {
+        setTimelineRotateY(0)
+        setTimelineZIndex(100)
+        setTimelineBackZIndex(1)
+        setTimelineOverflow('auto')
       }
 
       lastScrollY = scrollY

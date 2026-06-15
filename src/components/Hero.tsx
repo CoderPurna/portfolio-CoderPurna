@@ -20,7 +20,7 @@ export default function Hero({ greeting, photoTilted, terminalFallen, scrollToSe
             I'm a Full-Stack Engineer passionate about building scalable, user-friendly software solutions with clean code and creative UI designs. I specialize in developing web applications using Next.js, React, Node.js, and TypeScript.
           </p>
           <div className="hero-social">
-            <a href="mailto:deypurnabrata@gmail.com" className="social-btn" title="Email">
+            <a href="mailto:coderpurna@gmail.com" className="social-btn" title="Email">
               <i className="fas fa-envelope"></i>
             </a>
             <a href="https://github.com/Purnabrata2005" target="_blank" rel="noopener noreferrer" className="social-btn">

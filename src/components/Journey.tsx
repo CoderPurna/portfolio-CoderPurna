@@ -54,6 +54,33 @@ export default function Journey({
                 </p>
               </div>
             </div>
+
+            <div
+              className="timeline-item-flat"
+              id="exp-2"
+              data-country="India"
+              onClick={() => handleTimelineItemClick('India')}
+            >
+              <div className="timeline-dot"></div>
+              <div className="timeline-content-flat">
+                <h4 className="timeline-title">Associate Software Engineer Intern @ Srabu Consultancy Services</h4>
+                <p className="timeline-date">Oct 2025 - Dec 2025</p>
+                <p className="timeline-description">
+                  Selected for the Software Development & Engineering Team. Contributed to real-world IT consulting and digital marketing software solutions in a hybrid work environment under manager Saikat Chattaraj.
+                </p>
+                <p className="timeline-location">
+                  <i className="fas fa-map-marker-alt"></i> Kolkata, West Bengal, India (Hybrid)
+                </p>
+                <a
+                  href="https://drive.google.com/file/d/13xNcTGZ1cUgJK-XcH_DYiojGuXETK-EL/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: 'inline-block', marginTop: '8px', textDecoration: 'underline', fontSize: '0.9rem', fontWeight: 600 }}
+                >
+                  <i className="fas fa-external-link-alt" style={{ marginRight: '5px' }}></i> View Confirmation Letter
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
