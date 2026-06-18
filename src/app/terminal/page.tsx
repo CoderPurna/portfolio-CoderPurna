@@ -468,7 +468,7 @@ export default function TerminalPage() {
       '<a href="mailto:coderpurna@gmail.com" style="color:#ffffff;text-decoration:underline;">coderpurna@gmail.com</a>\n' +
       '• ' +
       wrapColor('LinkedIn: ', '#ff8c00') +
-      '<a href="https://linkedin.com/in/purnabrata-dey-15018a369" target="_blank" style="color:#ffffff;text-decoration:underline;">linkedin.com/in/purnabrata-dey-15018a369</a>\n' +
+      '<a href="https://linkedin.com/in/coderpurna" target="_blank" style="color:#ffffff;text-decoration:underline;">linkedin.com/in/coderpurna</a>\n' +
       '• ' +
       wrapColor('GitHub: ', '#ff8c00') +
       '<a href="https://github.com/Purnabrata2005" target="_blank" style="color:#ffffff;text-decoration:underline;">github.com/Purnabrata2005</a>\n' +

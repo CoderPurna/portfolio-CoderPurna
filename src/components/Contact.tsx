@@ -8,7 +8,7 @@ export default function Contact() {
         <p className="contact-intro">Let's build something amazing together</p>
         <div className="contact-grid">
           <a
-            href="https://linkedin.com/in/purnabrata-dey-15018a369"
+            href="https://linkedin.com/in/coderpurna"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-card"

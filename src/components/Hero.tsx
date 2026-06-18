@@ -27,7 +27,7 @@ export default function Hero({ greeting, photoTilted, terminalFallen, scrollToSe
               <i className="fab fa-github"></i>
             </a>
             <a
-              href="https://www.linkedin.com/in/purnabrata-dey-15018a369"
+              href="https://www.linkedin.com/in/coderpurna"
               target="_blank"
               rel="noopener noreferrer"
               className="social-btn"

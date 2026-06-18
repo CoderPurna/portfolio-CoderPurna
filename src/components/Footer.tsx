@@ -56,7 +56,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
               <i className="fab fa-github"></i>
             </a>
             <a
-              href="https://linkedin.com/in/purnabrata-dey-15018a369"
+              href="https://linkedin.com/in/coderpurna"
               target="_blank"
               rel="noopener noreferrer"
               title="LinkedIn"
