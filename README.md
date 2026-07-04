@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<!-- Banner -->
+<p align="center">  
+  <img alt="Jio Network blocking the view? Network switch reveals the magic!"  src="./assets/coderpurna.png">
+  <br><br>
+</p>
 
-## Getting Started
+<!-- Social Media Links -->
+<div align= center>
 
-First, run the development server:
+[![Twitter Badge](https://img.shields.io/badge/-@coder_purna-1ca0f1?style=social&labelColor=red&logo=x&logoColor=black&link=https://twitter.com/coder_nandan)](https://x.com/purnabrata2005) &nbsp;&nbsp; [![Linkedin Badge](https://img.shields.io/badge/@coderpurna-0e76a8)](https://www.linkedin.com/in/purnabrata-dey-15018a369/) &nbsp;&nbsp; [![Mail Badge](https://img.shields.io/badge/-coderpurna@gmail.com-c0392b?style=flat&labelColor=c0392b&logo=gmail&logoColor=pink)](mailto:coderpurna@gmail.com)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+</div>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<!-- About Me -->
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### <img src="https://user-images.githubusercontent.com/1303154/88677602-1635ba80-d120-11ea-84d8-d263ba5fc3c0.gif" width="20px"  alt="hi">&nbsp; Hi there
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### I'm a Explorer based in India.
 
-## Learn More
+- 🎓 I'm studying in Ramkrishna Mahato Government Engineering College ,Purulia.
 
-To learn more about Next.js, take a look at the following resources:
+- 📚 Pursuing my degree in computer science and engineering
+  .
+- 📫 Want to know about me? https://coderpurna.in (Upcoming)
+- 😎 I love everything in tech.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 🌍 I support linux because its amazing.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 😄 Passionate about Web and AI to bring that tech into peoples hand and AR too!
 
-## Deploy on Vercel
+<!-- Technologies that I'm working with -->
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="22px" align="top"/> &nbsp; **Tech Stack**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=html,css,js,ts,java,python,react,tailwind,express,bun,pnpm,npm,vite,nodejs,nextjs,mongodb,postgres,prisma,firebase,redis,git,&theme=dark&perline=7" />
+</p>
+
+<!-- Tools I use -->
+
+<img src="https://media2.giphy.com/media/ObNTw8Uzwy6KQ/giphy.gif?cid=ecf05e47nfhfh6dzq7v2j8p8s0h31w7r4i6p7o7z8ixj0g7c&rid=giphy.gif" width="22px" align="top"/> &nbsp; **Tools**
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=github,notion,cloudflare,figma,postman,vscode,vercel,netlify,docker&theme=dark" />
+</p>
+
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="25" height="25" align="top" /> &nbsp; **GitHub Analytics**
+
+<p align="center">
+  <img height="170" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=purnabrata2005&theme=radical" alt="GitHub stats" />
+  <img height="170" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=purnabrata2005&theme=radical" alt="Top languages" />
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com/?user=purnabrata2005&theme=radical&hide_border=true&date_format=j%20M%5B%20Y%5D&cache_seconds=1800" alt="GitHub streak" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Purnabrata2005&theme=react-dark&hide_border=true&area=true" alt="GitHub activity graph" />
+</p>
+
+
+⭐️ Thank you very much for visiting my profile !
