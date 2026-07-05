@@ -4,6 +4,7 @@ export const SITE_INFO = {
   name: USER.displayName,
   url: process.env.NEXT_PUBLIC_APP_URL || "https://coderpurna.me",
   ogImage: USER.ogImage,
+  favicon: USER.favicon,
   description: USER.bio,
   keywords: USER.keywords,
 };

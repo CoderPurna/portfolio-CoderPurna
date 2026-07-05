@@ -30,7 +30,7 @@ export default function GithubCalendarSection({ activeTheme }: GithubCalendarSec
           <div className="github-profile-header">
             <i className="fab fa-github github-panel-icon"></i>
             <div>
-              <h3 className="github-username">Purnabrata2005</h3>
+              <h3 className="github-username">CoderPurna</h3>
               <p className="github-subtext">Open Source Developer</p>
             </div>
           </div>
@@ -47,7 +47,7 @@ export default function GithubCalendarSection({ activeTheme }: GithubCalendarSec
           </div>
           
           <a 
-            href="https://github.com/Purnabrata2005" 
+            href="https://github.com/CoderPurna" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="github-profile-btn"
@@ -60,7 +60,7 @@ export default function GithubCalendarSection({ activeTheme }: GithubCalendarSec
         <div className="github-calendar-grid-container">
           <div className="github-calendar-wrapper">
             <GitHubCalendar
-              username="Purnabrata2005"
+              username="CoderPurna"
               theme={customTheme}
               colorScheme={activeTheme === 'dark' ? 'dark' : 'light'}
               blockSize={13}

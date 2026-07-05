@@ -52,7 +52,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
             </a>
           </div>
           <div className="footer-social-compact">
-            <a href="https://github.com/Purnabrata2005" target="_blank" rel="noopener noreferrer" title="GitHub">
+            <a href="https://github.com/CoderPurna" target="_blank" rel="noopener noreferrer" title="GitHub">
               <i className="fab fa-github"></i>
             </a>
             <a

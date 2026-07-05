@@ -62,7 +62,7 @@ export default function TerminalPage() {
       image: '/image/coderarena-cover.png',
       technologies: ['Vite-React', 'Tailwind CSS', 'Node.js', 'TypeScript', 'Express.js', 'Prisma', 'PostgreSQL', 'Docker'],
       demo: 'https://coderarena.tech/',
-      repo: 'https://github.com/Purnabrata2005/CodeArena',
+      repo: 'https://github.com/CoderPurna/CodeArena',
     },
     {
       title: 'Interactive Terminal Resume',
@@ -70,7 +70,7 @@ export default function TerminalPage() {
       image: '/image/social-cover.png',
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
       demo: '/terminal',
-      repo: 'https://github.com/Purnabrata2005/coderpurna',
+      repo: 'https://github.com/CoderPurna/coderpurna',
     },
   ]
 
@@ -471,10 +471,10 @@ export default function TerminalPage() {
       '<a href="https://linkedin.com/in/coderpurna" target="_blank" style="color:#ffffff;text-decoration:underline;">linkedin.com/in/coderpurna</a>\n' +
       '• ' +
       wrapColor('GitHub: ', '#ff8c00') +
-      '<a href="https://github.com/Purnabrata2005" target="_blank" style="color:#ffffff;text-decoration:underline;">github.com/Purnabrata2005</a>\n' +
+      '<a href="https://github.com/CoderPurna" target="_blank" style="color:#ffffff;text-decoration:underline;">github.com/CoderPurna</a>\n' +
       '• ' +
       wrapColor('Twitter / X: ', '#ff8c00') +
-      '<a href="https://x.com/purnabrata2005" target="_blank" style="color:#ffffff;text-decoration:underline;">@purnabrata2005</a>'
+      '<a href="https://x.com/CoderPurna" target="_blank" style="color:#ffffff;text-decoration:underline;">@purnabra2005</a>'
 
     printOutput(id, '', 'raw', contactText)
   }

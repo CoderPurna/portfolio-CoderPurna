@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${USER.displayName} | ${USER.jobTitle}`,
     description: SITE_INFO.description,
-    creator: "@purnabrata2005",
+    creator: "@CoderPurna",
     images: [SITE_INFO.ogImage],
   },
   verification: {
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     icon: [
       {
         url: "/favicon.ico",
-        type: "image/svg+xml",
+        type: "image/x-icon",
       },
     ],
   },

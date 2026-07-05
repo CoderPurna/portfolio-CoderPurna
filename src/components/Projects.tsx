@@ -22,7 +22,7 @@ export default function Projects() {
               A comprehensive coding practice, competitive programming, and technical interview preparation platform.
             </p>
             <a
-              href="https://github.com/Purnabrata2005/CodeArena"
+              href="https://github.com/CoderPurna/CodeArena"
               target="_blank"
               rel="noopener noreferrer"
               className="creator-github"

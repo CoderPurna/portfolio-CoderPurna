@@ -23,7 +23,7 @@ export default function Hero({ greeting, photoTilted, terminalFallen, scrollToSe
             <a href="mailto:coderpurna@gmail.com" className="social-btn" title="Email">
               <i className="fas fa-envelope"></i>
             </a>
-            <a href="https://github.com/Purnabrata2005" target="_blank" rel="noopener noreferrer" className="social-btn">
+            <a href="https://github.com/CoderPurna" target="_blank" rel="noopener noreferrer" className="social-btn">
               <i className="fab fa-github"></i>
             </a>
             <a

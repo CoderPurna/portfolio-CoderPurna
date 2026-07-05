@@ -16,7 +16,7 @@ export default function Contact() {
             <i className="fab fa-linkedin"></i>
             <span>LinkedIn</span>
           </a>
-          <a href="https://github.com/Purnabrata2005" target="_blank" rel="noopener noreferrer" className="contact-card">
+          <a href="https://github.com/CoderPurna" target="_blank" rel="noopener noreferrer" className="contact-card">
             <i className="fab fa-github"></i>
             <span>GitHub</span>
           </a>
